@@ -1,0 +1,127 @@
+Index: src/Quiz.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>import java.util.ArrayList;\r\nimport java.util.Scanner;\r\n\r\npublic class Quiz {\r\n\r\n    public static void main(String[] args) {\r\n        Scanner scanner = new Scanner(System.in);\r\n\r\n\r\n        ArrayList<Questao> questoes = new ArrayList<>();\r\n        questoes.add(new Questao(\"1- Quantas notas musicais existem na escala cromática?\",\r\n                \"A) 7\", \"B) 8\", \"C) 12\", \"D) 10\", \"E) 5\", \"C\"));\r\n        questoes.add(new Questao(\"Qual é a duração de uma semínima?\",\r\n                \"A) 1 tempo\", \"B) 2 tempos\", \"C) Meio tempo\", \"D) 4 tempos\", \"E) 3 tempos\", \"A\"));\r\n        questoes.add(new Questao(\"Qual é o intervalo de uma oitava?\",\r\n                \"A) 5 tons\", \"B) 6 tons\", \"C) 7 tons\", \"D) 8 tons\", \"E) Meio tom\", \"C\"));\r\n        questoes.add(new Questao(\"O que é um acorde maior?\",\r\n                \"A) Tríade formada por uma terça maior e uma quinta justa\", \"B) Uma única nota\",\r\n                \"C) Tríade formada por terça menor e quinta diminuta\", \"D) Uma série de escalas\",\r\n                \"E) Uma tríade aumentada\", \"A\"));\r\n        questoes.add(new Questao(\"Quantos semitons há em uma oitava?\",\r\n                \"A) 6\", \"B) 10\", \"C) 8\", \"D) 12\", \"E) 7\", \"D\"));\r\n        questoes.add(new Questao(\"Qual é a sequência de tons da escala maior?\",\r\n                \"A) Tom, tom, semitom, tom, tom, tom, semitom\", \"B) Tom, semitom, tom, tom, semitom, tom, tom\",\r\n                \"C) Semitom, tom, tom, semitom, tom, tom, semitom\", \"D) Tom, tom, tom, tom, semitom\",\r\n                \"E) Semitom, tom, tom, tom, semitom, tom\", \"A\"));\r\n        questoes.add(new Questao(\"O que significa 'pianíssimo' em música?\",\r\n                \"A) Tocar rapidamente\", \"B) Tocar muito baixo\", \"C) Tocar com intensidade média\",\r\n                \"D) Tocar com força\", \"E) Tocar pausadamente\", \"B\"));\r\n        questoes.add(new Questao(\"Qual é a fórmula para acordes diminutos?\",\r\n                \"A) 1ª, 3ª maior e 5ª justa\", \"B) 1ª, 3ª menor e 5ª diminuta\",\r\n                \"C) 1ª, 3ª maior e 7ª maior\", \"D) 1ª, 5ª justa e 8ª\", \"E) 1ª, 3ª menor e 7ª menor\", \"B\"));\r\n        questoes.add(new Questao(\"Qual é o tempo padrão de um compasso 4/4?\",\r\n                \"A) 3 tempos\", \"B) 6 tempos\", \"C) 4 tempos\", \"D) 2 tempos\", \"E) 8 tempos\", \"C\"));\r\n        questoes.add(new Questao(\"O que é um intervalo harmônico?\",\r\n                \"A) Notas tocadas sucessivamente\", \"B) Notas tocadas simultaneamente\",\r\n                \"C) Uma escala menor\", \"D) Um ritmo alternado\", \"E) Uma melodia dissonante\", \"B\"));\r\n        questoes.add(new Questao(\"Qual é a definição de 'timbre'?\",\r\n                \"A) Altura do som\", \"B) Duração do som\", \"C) Cor ou qualidade do som\",\r\n                \"D) Intensidade do som\", \"E) Frequência do som\", \"C\"));\r\n        questoes.add(new Questao(\"O que é uma síncope na música?\",\r\n                \"A) Nota sustentada por vários compassos\", \"B) Ênfase em tempos fracos ou partes fracas do tempo\",\r\n                \"C) Sequência de notas descendentes\", \"D) Uma pausa longa\", \"E) Escala cromática\", \"B\"));\r\n        questoes.add(new Questao(\"Quantos semitons há em um intervalo de quinta justa?\",\r\n                \"A) 6\", \"B) 5\", \"C) 7\", \"D) 8\", \"E) 4\", \"C\"));\r\n        questoes.add(new Questao(\"O que significa 'adagio' na música?\",\r\n                \"A) Tocar rapidamente\", \"B) Tocar moderadamente rápido\", \"C) Tocar lentamente\",\r\n                \"D) Tocar com intensidade\", \"E) Tocar sem pausas\", \"C\"));\r\n        questoes.add(new Questao(\"Qual é a nota intermediária entre Fá e Sol na escala cromática?\",\r\n                \"A) Fá sustenido\", \"B) Sol bemol\", \"C) Ambas estão corretas\", \"D) Nenhuma das anteriores\",\r\n                \"E) Lá bemol\", \"C\"));\r\n\r\n\r\n        System.out.println(\"Centro Universitário Alfredo Nascer - Unifan\");\r\n        System.out.println(\"Aluno: Gabryel Albuquerque de Sá\");\r\n        System.out.println(\"Disciplina: Algoitmo e Programação II\");\r\n        System.out.println(\"Professor Breno Pimenta\");\r\n        System.out.println(\"------------------------------------------------------------------------------\");\r\n        System.out.println(\"Olá, seja bem vindo ao Quiz!!!\");\r\n        System.out.println(\"Bem-vindo ao Quiz de Teoria Musical!\");\r\n        System.out.println(\"Você responderá 15 perguntas de múltipla escolha.\");\r\n        System.out.println(\"Cada pergunta tem 5 alternativas. Digite a letra correspondente à sua resposta.\\n\");\r\n\r\n        int acertos = 0;\r\n        ArrayList<String> respostasDetalhadas = new ArrayList<>();\r\n        ArrayList<String> questoesErradas = new ArrayList<>();\r\n\r\n\r\n        for (int i = 0; i < questoes.size(); i++) {\r\n            Questao questao = questoes.get(i);\r\n            questao.escrevaQuestao();\r\n\r\n            String respostaUsuario = questao.leiaResposta();\r\n\r\n            if (questao.isCorreta(respostaUsuario)) {\r\n                acertos++;\r\n                respostasDetalhadas.add(\"Pergunta \" + (i + 1) + \" (Acertou): \" + questao.pergunta);\r\n            } else {\r\n                respostasDetalhadas.add(\"Pergunta \" + (i + 1) + \" (Errou): \" + questao.pergunta);\r\n                questoesErradas.add(\"Pergunta \" + (i + 1) + \": \" + questao.pergunta +\r\n                        \"\\nResposta correta: \" + questao.correta);\r\n            }\r\n        }\r\n\r\n        int erros = questoes.size() - acertos;\r\n        double porcentagem = (acertos / (double) questoes.size()) * 100;\r\n\r\n        System.out.println(\"\\n--- Resultados ---\");\r\n        System.out.println(\"Você acertou \" + acertos + \" questão(ões).\");\r\n        System.out.println(\"Você errou \" + erros + \" questão(ões).\");\r\n        System.out.printf(\"Porcentagem de acertos: %.2f%%\\n\", porcentagem);\r\n\r\n        System.out.println(\"\\n--- Resumo das Respostas ---\");\r\n        for (String detalhe : respostasDetalhadas) {\r\n            System.out.println(detalhe);\r\n        }\r\n\r\n        if (!questoesErradas.isEmpty()) {\r\n            System.out.println(\"\\n--- Questões Erradas e Respostas Corretas ---\");\r\n            for (String detalheErro : questoesErradas) {\r\n                System.out.println(detalheErro);\r\n            }\r\n        }\r\n\r\n        scanner.close();\r\n    }\r\n}\r\n\r\n\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/Quiz.java b/src/Quiz.java
+--- a/src/Quiz.java	(revision 294c2607c677d571f1e9a3b32fce2dc3e2945dd2)
++++ b/src/Quiz.java	(date 1732661070134)
+@@ -10,43 +10,43 @@
+         ArrayList<Questao> questoes = new ArrayList<>();
+         questoes.add(new Questao("1- Quantas notas musicais existem na escala cromática?",
+                 "A) 7", "B) 8", "C) 12", "D) 10", "E) 5", "C"));
+-        questoes.add(new Questao("Qual é a duração de uma semínima?",
++        questoes.add(new Questao("2- Qual é a duração de uma semínima?",
+                 "A) 1 tempo", "B) 2 tempos", "C) Meio tempo", "D) 4 tempos", "E) 3 tempos", "A"));
+-        questoes.add(new Questao("Qual é o intervalo de uma oitava?",
++        questoes.add(new Questao("3- Qual é o intervalo de uma oitava?",
+                 "A) 5 tons", "B) 6 tons", "C) 7 tons", "D) 8 tons", "E) Meio tom", "C"));
+-        questoes.add(new Questao("O que é um acorde maior?",
++        questoes.add(new Questao("4- O que é um acorde maior?",
+                 "A) Tríade formada por uma terça maior e uma quinta justa", "B) Uma única nota",
+                 "C) Tríade formada por terça menor e quinta diminuta", "D) Uma série de escalas",
+                 "E) Uma tríade aumentada", "A"));
+-        questoes.add(new Questao("Quantos semitons há em uma oitava?",
++        questoes.add(new Questao("5- Quantos semitons há em uma oitava?",
+                 "A) 6", "B) 10", "C) 8", "D) 12", "E) 7", "D"));
+-        questoes.add(new Questao("Qual é a sequência de tons da escala maior?",
++        questoes.add(new Questao("6- Qual é a sequência de tons da escala maior?",
+                 "A) Tom, tom, semitom, tom, tom, tom, semitom", "B) Tom, semitom, tom, tom, semitom, tom, tom",
+                 "C) Semitom, tom, tom, semitom, tom, tom, semitom", "D) Tom, tom, tom, tom, semitom",
+                 "E) Semitom, tom, tom, tom, semitom, tom", "A"));
+-        questoes.add(new Questao("O que significa 'pianíssimo' em música?",
++        questoes.add(new Questao("7- O que significa 'pianíssimo' em música?",
+                 "A) Tocar rapidamente", "B) Tocar muito baixo", "C) Tocar com intensidade média",
+                 "D) Tocar com força", "E) Tocar pausadamente", "B"));
+-        questoes.add(new Questao("Qual é a fórmula para acordes diminutos?",
++        questoes.add(new Questao("8- Qual é a fórmula para acordes diminutos?",
+                 "A) 1ª, 3ª maior e 5ª justa", "B) 1ª, 3ª menor e 5ª diminuta",
+                 "C) 1ª, 3ª maior e 7ª maior", "D) 1ª, 5ª justa e 8ª", "E) 1ª, 3ª menor e 7ª menor", "B"));
+-        questoes.add(new Questao("Qual é o tempo padrão de um compasso 4/4?",
++        questoes.add(new Questao("9- Qual é o tempo padrão de um compasso 4/4?",
+                 "A) 3 tempos", "B) 6 tempos", "C) 4 tempos", "D) 2 tempos", "E) 8 tempos", "C"));
+-        questoes.add(new Questao("O que é um intervalo harmônico?",
++        questoes.add(new Questao("10- O que é um intervalo harmônico?",
+                 "A) Notas tocadas sucessivamente", "B) Notas tocadas simultaneamente",
+                 "C) Uma escala menor", "D) Um ritmo alternado", "E) Uma melodia dissonante", "B"));
+-        questoes.add(new Questao("Qual é a definição de 'timbre'?",
++        questoes.add(new Questao("11- Qual é a definição de 'timbre'?",
+                 "A) Altura do som", "B) Duração do som", "C) Cor ou qualidade do som",
+                 "D) Intensidade do som", "E) Frequência do som", "C"));
+-        questoes.add(new Questao("O que é uma síncope na música?",
++        questoes.add(new Questao("12- O que é uma síncope na música?",
+                 "A) Nota sustentada por vários compassos", "B) Ênfase em tempos fracos ou partes fracas do tempo",
+                 "C) Sequência de notas descendentes", "D) Uma pausa longa", "E) Escala cromática", "B"));
+-        questoes.add(new Questao("Quantos semitons há em um intervalo de quinta justa?",
++        questoes.add(new Questao("13- Quantos semitons há em um intervalo de quinta justa?",
+                 "A) 6", "B) 5", "C) 7", "D) 8", "E) 4", "C"));
+-        questoes.add(new Questao("O que significa 'adagio' na música?",
++        questoes.add(new Questao("14- O que significa 'adagio' na música?",
+                 "A) Tocar rapidamente", "B) Tocar moderadamente rápido", "C) Tocar lentamente",
+                 "D) Tocar com intensidade", "E) Tocar sem pausas", "C"));
+-        questoes.add(new Questao("Qual é a nota intermediária entre Fá e Sol na escala cromática?",
++        questoes.add(new Questao("15- Qual é a nota intermediária entre Fá e Sol na escala cromática?",
+                 "A) Fá sustenido", "B) Sol bemol", "C) Ambas estão corretas", "D) Nenhuma das anteriores",
+                 "E) Lá bemol", "C"));
+ 
+@@ -56,7 +56,6 @@
+         System.out.println("Disciplina: Algoitmo e Programação II");
+         System.out.println("Professor Breno Pimenta");
+         System.out.println("------------------------------------------------------------------------------");
+-        System.out.println("Olá, seja bem vindo ao Quiz!!!");
+         System.out.println("Bem-vindo ao Quiz de Teoria Musical!");
+         System.out.println("Você responderá 15 perguntas de múltipla escolha.");
+         System.out.println("Cada pergunta tem 5 alternativas. Digite a letra correspondente à sua resposta.\n");
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"AutoImportSettings\">\r\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\r\n  </component>\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"cd4398fa-f997-4a40-9e57-66a3af80298a\" name=\"Changes\" comment=\"\">\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/workspace.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/questao.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/Questao.java\" afterDir=\"false\" />\r\n    </list>\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"FileTemplateManagerImpl\">\r\n    <option name=\"RECENT_TEMPLATES\">\r\n      <list>\r\n        <option value=\"Class\" />\r\n      </list>\r\n    </option>\r\n  </component>\r\n  <component name=\"Git.Settings\">\r\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\r\n  </component>\r\n  <component name=\"MarkdownSettingsMigration\">\r\n    <option name=\"stateVersion\" value=\"1\" />\r\n  </component>\r\n  <component name=\"ProjectId\" id=\"2mXD1w0BJdQiyd1woum8wH9iGdu\" />\r\n  <component name=\"ProjectLevelVcsManager\" settingsEditedManually=\"true\" />\r\n  <component name=\"ProjectViewState\">\r\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\r\n    <option name=\"showLibraryContents\" value=\"true\" />\r\n  </component>\r\n  <component name=\"PropertiesComponent\"><![CDATA[{\r\n  \"keyToString\": {\r\n    \"RunOnceActivity.OpenProjectViewOnStart\": \"true\",\r\n    \"RunOnceActivity.ShowReadmeOnStart\": \"true\",\r\n    \"last_opened_file_path\": \"C:/Users/Unifan/WorkSpace/temp/TrabalhoQuiz\",\r\n    \"settings.editor.selected.configurable\": \"org.jetbrains.plugins.github.ui.GithubSettingsConfigurable\"\r\n  },\r\n  \"keyToStringList\": {\r\n    \"GitStage.ChangesTree.GroupingKeys\": [\r\n      \"directory\",\r\n      \"module\",\r\n      \"repository\"\r\n    ]\r\n  }\r\n}]]></component>\r\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\r\n  <component name=\"TaskManager\">\r\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\r\n      <changelist id=\"cd4398fa-f997-4a40-9e57-66a3af80298a\" name=\"Changes\" comment=\"\" />\r\n      <created>1727213819553</created>\r\n      <option name=\"number\" value=\"Default\" />\r\n      <option name=\"presentableId\" value=\"Default\" />\r\n      <updated>1727213819553</updated>\r\n    </task>\r\n    <servers />\r\n  </component>\r\n  <component name=\"Vcs.Log.Tabs.Properties\">\r\n    <option name=\"TAB_STATES\">\r\n      <map>\r\n        <entry key=\"MAIN\">\r\n          <value>\r\n            <State />\r\n          </value>\r\n        </entry>\r\n      </map>\r\n    </option>\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	(revision 294c2607c677d571f1e9a3b32fce2dc3e2945dd2)
++++ b/.idea/workspace.xml	(date 1732661486209)
+@@ -21,6 +21,7 @@
+     </option>
+   </component>
+   <component name="Git.Settings">
++    <option name="PUSH_AUTO_UPDATE" value="true" />
+     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+   </component>
+   <component name="MarkdownSettingsMigration">
+@@ -56,6 +57,21 @@
+       <option name="presentableId" value="Default" />
+       <updated>1727213819553</updated>
+     </task>
++    <task id="LOCAL-00001" summary="Final">
++      <created>1732661104052</created>
++      <option name="number" value="00001" />
++      <option name="presentableId" value="LOCAL-00001" />
++      <option name="project" value="LOCAL" />
++      <updated>1732661104052</updated>
++    </task>
++    <task id="LOCAL-00002" summary="Merge remote-tracking branch 'origin/master'">
++      <created>1732661468651</created>
++      <option name="number" value="00002" />
++      <option name="presentableId" value="LOCAL-00002" />
++      <option name="project" value="LOCAL" />
++      <updated>1732661468651</updated>
++    </task>
++    <option name="localTasksCounter" value="3" />
+     <servers />
+   </component>
+   <component name="Vcs.Log.Tabs.Properties">
+@@ -69,4 +85,9 @@
+       </map>
+     </option>
+   </component>
++  <component name="VcsManagerConfiguration">
++    <MESSAGE value="Final" />
++    <MESSAGE value="Merge remote-tracking branch 'origin/master'" />
++    <option name="LAST_COMMIT_MESSAGE" value="Merge remote-tracking branch 'origin/master'" />
++  </component>
+ </project>
+\ No newline at end of file
